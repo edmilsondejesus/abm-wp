@@ -1,0 +1,25 @@
+# Arquivos de configuração local
+.env
+*.env
+
+# Arquivos de IDE/Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Arquivos temporários/compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de dados grandes/resultados
+#*.csv
+#*.xlsx
+
+# Pastas específicas
+#/resultados/
+/Mapas2/
+/Python-restrito/
+# Logs e sistemas
+*.log

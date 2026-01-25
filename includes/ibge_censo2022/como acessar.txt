@@ -1,0 +1,9 @@
+Censo 2022 
+Visitar o link
+https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html?=&t=downloads
+
+Acessar a opção CEnso_Demografico_2022
+Agregados_por_setores_Censitarios
+Agregados_por_Setor_csv
+Agragados_por_setor_caracteristicas_dominicilio1_BR.zip
+
