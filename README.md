@@ -1,6 +1,5 @@
 # ABM-WP Framework: Agent-Based Model for Water Prediction
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![GAMA Platform](https://img.shields.io/badge/GAMA-Platform-orange)](https://gama-platform.org/)
 [![Python](https://img.shields.io/badge/Python-3.8+-green.svg)](https://www.python.org/)
 
@@ -27,33 +26,6 @@ The model was implemented on the **GAMA platform**, tested and calibrated using 
 
 ---
 
-## Repository Structure
-
-ABM-WP/
-├── models/
-│ └── ABMSWPSimulacao.gaml # Main GAMA model file
-├── includes/
-│ ├── dados/ # Input data directory
-│ │ ├── Tabela_consumo_Itapua_120m.csv # 120-month household consumption data
-│ │ ├── Tabela_Subcategoria_Tarifaria.csv # Tariff category classification
-│ │ ├── Tabela_Coord_Mat.csv # Anonymized geographic coordinates
-│ │ └── Tabela_Consumidores_Itapua_2015_2025_full.csv # Consumer list (2015-2025)
-│ ├── maps/ # GIS shapefiles
-│ │ ├── Itapua13.shp # Itapuã census sectors
-│ │ └── LIMITE_BAIRRO.shp # Salvador neighborhood boundaries
-│ ├── Agregados_por_setores_renda_responsavel_BR.csv # Income by census sector (IBGE 2022)
-│ └── README.pdf # Detailed Python script documentation
-├── resultados/ # Simulation output directory
-└── Python/ # Data preparation and analysis scripts
-├── Python-prepara-simulacao-2015/
-│ └── _Script_prepara_simulacao.ipynb
-├── Python-analisa-resultado-simulacao-2015/
-│ └── _Script_analisa_resultado_simulacao.ipynb
-├── Python-prepara-simulacao/
-│ └── _Script_prepara_simulacao.ipynb
-└── Python-analisa-resultado-simulacao/
-└── _Script_analisa_resultado_simulacao.ipynb
-
 > **Note:** The following files exceed GitHub's 50 MB size limit and must be extracted manually:
 > - `/includes/ibge_censo2022/Agregados_por_setores_caracteristicas_domicilio1_BR.zip`
 > - `/includes/dados/Tabela_Coord_Mat.zip`
@@ -66,7 +38,7 @@ ABM-WP/
 | Software | Version | Download Link |
 |----------|---------|---------------|
 | **GAMA Platform** | 1.9.x (or latest) | [https://gama-platform.org/download](https://gama-platform.org/download) |
-| **Python** | 3.8+ | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
+| **Python** | 3.13+ | [https://www.python.org/downloads/](https://www.python.org/downloads/) |
 | **Jupyter Notebook** | Latest | `pip install notebook` |
 
 ### Python Dependencies
