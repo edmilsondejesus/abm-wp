@@ -5,13 +5,9 @@
 
 ## Overview
 
-This repository contains the complete implementation of the **Agent-Based Model for Water Prediction (ABM-WP)** framework, developed for the article:
+This repository contains the complete implementation of the **Agent-Based Model for Water Prediction (ABM-WP)** framework, developed for the article "A Multidimensional Agent-Based Modeling and Simulation Framework for Urban Water Demand Forecast".
 
-> *"A Multidimensional Agent-Based Modeling and Simulation Framework for Urban Water Demand Forecast"*
-
-> *Water resource sustainability relies on the interplay of environmental, technological, and social factors shaping urban water demand. However, traditional aggregated water demand forecasting models often fail to capture spatio-temporal heterogeneity and behavioral dynamics of domestic water consumption. We present the Agent-Based Model for Water Prediction (ABM-WP) multidimensional framework, which simulates neighborhood-scale water consumption considering income and population growth with three behavioral profiles: environmentalist, moderate, and wasteful. The ABM-WP implemented on the GAMA platform was tested and calibrated using historical data (2015-2025) from Salvador, Brazil, to generate future scenario analyses for 2026–2035, compared with statistical and machine learning models. ANOVA and Tukey tests establish that the environmentalist scenario (CII) differed significantly from the baseline (p-value = 0.0421) with projected consumption reductions of 48,494 m³/year. Heatmap analysis revealed the influence of connection density and socioeconomic dynamics on consumption patterns. Results indicate that ABM-WP can
-contribute to decision support for urban water sustainability.*
-
+The sustainability of water resources depends on the interaction of environmental, technological, and social factors that shape urban water demand. In this context, we present the Agent-Based Model for Water Forecasting (ABM-WP), a multidimensional framework that simulates water consumption at a neighborhood scale, considering income and population growth, with three behavioral profiles. This includes tests and comparisons with statistical and machine learning models. Heat map analysis revealed the influence of connection density and socioeconomic dynamics on consumption patterns. The results indicate that the ABM-WP can contribute to supporting decision-making for urban water sustainability.
 
 The ABM-WP framework simulates neighborhood-scale water consumption considering income and population growth with three behavioral profiles:
 - **Environmentalist** (low consumption)
