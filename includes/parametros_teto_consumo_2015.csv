@@ -1,0 +1,4 @@
+parametro;valor;descricao
+teto_consumo_absoluto;1000.0;Valor máximo absoluto observado (pode conter outliers)
+teto_consumo_percentil_95;426.2295081967213;95% dos consumidores estão abaixo deste valor
+teto_consumo_percentil_99;715.6693989071023;99% dos consumidores estão abaixo deste valor (RECOMENDADO)
