@@ -39,6 +39,8 @@ The model was implemented on the **GAMA platform**, tested and calibrated using 
 > - `/includes/dados/Tabela_Coord_Mat.zip`
 > - `/includes/dados/Tabela_consumo_Itapua_120m.zip`
 
+For detailed instructions on importing models into GAMA, refer to the official documentation: [https://gama-platform.github.io/wiki/ImportingModels](https://gama-platform.github.io/wiki/ImportingModels)
+
 For details about the parameters, inputs, and output files of the Python scripts, go to the subfolder  "includes" and open the Readme.pdf file.
 
 ### Required Software
