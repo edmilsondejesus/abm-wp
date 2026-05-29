@@ -7,7 +7,7 @@ global {
      // limite_minimo_consumo/person/day (WHO, 2020)
     float limite_minimo_oms <- 20.0;
     
-    string ano_referencia_dados <- "2015";  //2025 ou 2015
+    string ano_referencia_dados <- "2025";  //2025 ou 2015
     int ano_geracao_int <- int(ano_referencia_dados);
     string ano_geracao_inicio <- string(ano_geracao_int + 1);
     string ano_geracao_fim <- string(ano_geracao_int + 11);

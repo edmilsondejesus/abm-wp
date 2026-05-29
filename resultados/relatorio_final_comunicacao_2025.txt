@@ -1,0 +1,15 @@
+=== RELATÓRIO FINAL DO COMMUNICATION AGENT ===
+Período: 2026 a 2035
+Ano referência dados: 2025
+
+=== CENÁRIO BASE (CI) ===
+Consumo inicial: 184086.82 m³
+Consumo final: 186548.35 m³
+Crescimento total: 1.34%
+
+=== COMPARATIVO FINAL ===
+CI (Base): 186548.35 m³
+CIV (Renda Linear): 195926.77 m³ (dif: 5.03%)
+CV (Renda Equilíbrio): 196253.32 m³ (dif: 5.2%)
+CVI (Renda Desequilíbrio): 196262.37 m³ (dif: 5.21%)
+

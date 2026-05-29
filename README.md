@@ -54,4 +54,4 @@ For details about the parameters, inputs, and output files of the Python scripts
 ### Python Dependencies
 
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn statsmodels
+pip install pandas numpy matplotlib seaborn scikit-learn statsmodels pyproj nbconvert geopandas shapely fiona
