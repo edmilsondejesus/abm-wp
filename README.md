@@ -36,7 +36,6 @@ The model was implemented on the **GAMA platform**, tested and calibrated using 
 
 > **Note:** The following files exceed GitHub's 50 MB size limit and must be extracted manually:
 > - `/includes/ibge_censo2022/Agregados_por_setores_caracteristicas_domicilio1_BR.zip`
-> - `/includes/dados/Tabela_Coord_Mat.zip`
 > - `/includes/dados/Tabela_consumo_Itapua_120m.zip`
 
 For detailed instructions on importing models into GAMA, refer to the official documentation: [https://gama-platform.github.io/wiki/ImportingModels](https://gama-platform.github.io/wiki/ImportingModels)
