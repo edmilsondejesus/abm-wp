@@ -43,6 +43,17 @@ For detailed instructions on importing models into GAMA, refer to the official d
 
 For details about the parameters, inputs, and output files of the Python scripts, go to the subfolder  "includes" and open the Readme.pdf file.
 
+### Data Privacy Statement
+
+This study complies with the Brazilian General Data Protection Law (LGPD)
+(Law 13.709/2018). All personal identifiers, including the unique household registration
+codes (SK_MATRICULA), were anonymized using cryptographic hashing
+(SHA-256), preventing individual identification (see Section 2.2). Furthermore,
+all geographic coordinates were also anonymized by adding random noise between
+5 and 10 meters to each coordinate, making spatial re-identification impossible.
+Were permanently deleted after processing: the raw identifiers and
+original coordinates. Only fully anonymized data is available for replication.
+
 ### Required Software
 
 | Software | Version | Download Link |
@@ -55,3 +66,4 @@ For details about the parameters, inputs, and output files of the Python scripts
 
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn statsmodels pyproj nbconvert geopandas shapely fiona
+
