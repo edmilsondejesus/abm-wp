@@ -7,7 +7,7 @@ global {
      // limite_minimo_consumo/person/day (WHO, 2020)
     float limite_minimo_oms <- 20.0;
     
-    string ano_referencia_dados <- "2025";  //2025 ou 2015
+    string ano_referencia_dados <- "2015";  //2025 ou 2015
     int ano_geracao_int <- int(ano_referencia_dados);
     string ano_geracao_inicio <- string(ano_geracao_int + 1);
     string ano_geracao_fim <- string(ano_geracao_int + 11);
@@ -59,7 +59,7 @@ global {
     string path_qgis_export <- arquivo_comparativo_perfil_cenario;
 
 	// Variable to identify the current scenario (must be updated in the setup of each scenario)
-    string scenario_id <- "CI"; 
+    string scenario_id <- "S_I"; 
 
 	action inicializar_csv_qgis {
         string cabecalho <- "SK_MATRICULA,CD_SETOR,TP_COMPORTAMENTO,NN_MEDIA_CONSUMO,NN_CONSUMO_DIARIO,NN_MORADORES_ANALISE,NM_CENARIO,TP_NOVO_COMPORTAMENTO,NN_NOVA_MEDIA_CONSUMO,NN_NOVO_CONSUMO_DIARIO,NN_NOVO_MORADORES_ANALISE" ;
@@ -138,9 +138,9 @@ global {
     csv_file arquivo_consumo <- csv_file(consumo_file, ";", true);    
 
     // Shapefile path
-    string shapefile_path <- "../includes/maps/LIMITE_BAIRRO.shp";
-    string shapefile_path_prj <- "31984";
-    file shapefile <- shape_file(shapefile_path, shapefile_path_prj, true);
+    //string shapefile_path <- "../includes/maps/LIMITE_BAIRRO.shp";
+    //string shapefile_path_prj <- "31984";
+    //file shapefile <- shape_file(shapefile_path, shapefile_path_prj, true);
     geometry shape <- envelope(BA_setores_CD20220_shape_file);
         
     // Time variables and simulation
@@ -577,24 +577,24 @@ global {
     
     // Create a CSV header with all scenarios.
     string conteudo_csv <- "Mes;Ano;Mes_Ano;";
-    conteudo_csv <- conteudo_csv + "CI_Pop_Uniforme;";
-    conteudo_csv <- conteudo_csv + "CII_Ambientalistas;";
-    conteudo_csv <- conteudo_csv + "CIII_Perdularios;";
-    conteudo_csv <- conteudo_csv + "CIV_PopUnif_RendaLinear;";
-    conteudo_csv <- conteudo_csv + "CV_PopUnif_RendaEquilibrio;";
-    conteudo_csv <- conteudo_csv + "CVI_PopUnif_RendaDesequilibrio;";
-    conteudo_csv <- conteudo_csv + "CVII_PopAleat_RendaLinear;";
-    conteudo_csv <- conteudo_csv + "CVIII_PopAleat_RendaEquilibrio;";
-    conteudo_csv <- conteudo_csv + "CIX_PopAleat_RendaDesequilibrio;";
-    conteudo_csv <- conteudo_csv + "CX_Ambient_RendaLinear;";
-    conteudo_csv <- conteudo_csv + "CXI_Ambient_RendaEquilibrio;";
-    conteudo_csv <- conteudo_csv + "CXII_Ambient_RendaDesequilibrio;";
-    conteudo_csv <- conteudo_csv + "CXIII_Perdul_RendaLinear;";
-    conteudo_csv <- conteudo_csv + "CXIV_Perdul_RendaEquilibrio;";
-    conteudo_csv <- conteudo_csv + "CXV_Perdul_RendaDesequilibrio";
-    conteudo_csv <- conteudo_csv + ";CXVI_PopUnif_RendaAleatLinear";
-    conteudo_csv <- conteudo_csv + ";CXVII_PopUnif_RendaAleatEquilibrio";
-    conteudo_csv <- conteudo_csv + ";CXVIII_PopUnif_RendaAleatDesequilibrio";
+    conteudo_csv <- conteudo_csv + "S_I_Pop_Uniforme;";
+    conteudo_csv <- conteudo_csv + "S_II_Ambientalistas;";
+    conteudo_csv <- conteudo_csv + "S_III_Perdularios;";
+    conteudo_csv <- conteudo_csv + "S_IV_PopUnif_RendaLinear;";
+    conteudo_csv <- conteudo_csv + "S_V_PopUnif_RendaEquilibrio;";
+    conteudo_csv <- conteudo_csv + "S_VI_PopUnif_RendaDesequilibrio;";
+    conteudo_csv <- conteudo_csv + "S_VII_PopAleat_RendaLinear;";
+    conteudo_csv <- conteudo_csv + "S_VIII_PopAleat_RendaEquilibrio;";
+    conteudo_csv <- conteudo_csv + "S_IX_PopAleat_RendaDesequilibrio;";
+    conteudo_csv <- conteudo_csv + "S_X_Ambient_RendaLinear;";
+    conteudo_csv <- conteudo_csv + "S_XI_Ambient_RendaEquilibrio;";
+    conteudo_csv <- conteudo_csv + "S_XII_Ambient_RendaDesequilibrio;";
+    conteudo_csv <- conteudo_csv + "S_XIII_Perdul_RendaLinear;";
+    conteudo_csv <- conteudo_csv + "S_XIV_Perdul_RendaEquilibrio;";
+    conteudo_csv <- conteudo_csv + "S_XV_Perdul_RendaDesequilibrio";
+    conteudo_csv <- conteudo_csv + ";S_XVI_PopUnif_RendaAleatLinear";
+    conteudo_csv <- conteudo_csv + ";S_XVII_PopUnif_RendaAleatEquilibrio";
+    conteudo_csv <- conteudo_csv + ";S_XVIII_PopUnif_RendaAleatDesequilibrio";
     
     conteudo_csv <- conteudo_csv + "\n";
     
@@ -865,24 +865,24 @@ species Residencia {
 
     // --- FINAL REFLECTION (Cycle 108) FOR EXPORTING SCENARIOS ---
     action exportar_resultados_qgis {
-        do exportar_cenario("CI", consumo_atual_cI, nn_moradores);
-        do exportar_cenario("CII", consumo_atual_cII, nn_moradores);
-        do exportar_cenario("CIII", consumo_atual_cIII, nn_moradores);
-        do exportar_cenario("CIV", consumo_atual_cIV, nn_moradores);
-        do exportar_cenario("CV", consumo_atual_cV, nn_moradores);
-        do exportar_cenario("CVI", consumo_atual_cVI, nn_moradores);
-        do exportar_cenario("CVII", consumo_atual_cVII, nn_moradores);
-        do exportar_cenario("CVIII", consumo_atual_cVIII, nn_moradores);
-        do exportar_cenario("CIX", consumo_atual_cIX, nn_moradores);
-        do exportar_cenario("CX", consumo_atual_cX, nn_moradores);
-        do exportar_cenario("CXI", consumo_atual_cXI, nn_moradores);
-        do exportar_cenario("CXII", consumo_atual_cXII, nn_moradores);
-        do exportar_cenario("CXIII", consumo_atual_cXIII, nn_moradores);
-        do exportar_cenario("CXIV", consumo_atual_cXIV, nn_moradores);
-        do exportar_cenario("CXV", consumo_atual_cXV, nn_moradores);
-        do exportar_cenario("CXVI", consumo_atual_cXVI, nn_moradores);
-        do exportar_cenario("CXVII", consumo_atual_cXVII, nn_moradores);
-        do exportar_cenario("CXVIII", consumo_atual_cXVIII, nn_moradores);
+        do exportar_cenario("S_I", consumo_atual_cI, nn_moradores);
+        do exportar_cenario("S_II", consumo_atual_cII, nn_moradores);
+        do exportar_cenario("S_III", consumo_atual_cIII, nn_moradores);
+        do exportar_cenario("S_IV", consumo_atual_cIV, nn_moradores);
+        do exportar_cenario("S_V", consumo_atual_cV, nn_moradores);
+        do exportar_cenario("S_VI", consumo_atual_cVI, nn_moradores);
+        do exportar_cenario("S_VII", consumo_atual_cVII, nn_moradores);
+        do exportar_cenario("S_VIII", consumo_atual_cVIII, nn_moradores);
+        do exportar_cenario("S_IX", consumo_atual_cIX, nn_moradores);
+        do exportar_cenario("S_X", consumo_atual_cX, nn_moradores);
+        do exportar_cenario("S_XI", consumo_atual_cXI, nn_moradores);
+        do exportar_cenario("S_XII", consumo_atual_cXII, nn_moradores);
+        do exportar_cenario("S_XIII", consumo_atual_cXIII, nn_moradores);
+        do exportar_cenario("S_XIV", consumo_atual_cXIV, nn_moradores);
+        do exportar_cenario("S_XV", consumo_atual_cXV, nn_moradores);
+        do exportar_cenario("S_XVI", consumo_atual_cXVI, nn_moradores);
+        do exportar_cenario("S_XVII", consumo_atual_cXVII, nn_moradores);
+        do exportar_cenario("S_XVIII", consumo_atual_cXVIII, nn_moradores);
     }    
 // RESIDENT UPDATE ACTION (UNIFORM - MONTHLY)
     action atualizar_moradores {
@@ -1313,34 +1313,34 @@ experiment "VisualizacaoCompleta" type: gui {
                    y_label: "Consumption (m^3)" x_label: "Month" size: {1.0, 1.0} {
                 
                 // Base Scenarios (No Income Factor)
-                data "C I: Uniform Pop" value: consumo_anual_total_cI color: #blue;
-                data "C II: Environmentalists Only" value: consumo_anual_total_cII color: #green;
-                data "C III: Wasteful Only" value: consumo_anual_total_cIII color: #red;
+                data "S_I: Uniform Pop" value: consumo_anual_total_cI color: #blue;
+                data "S_II: Environmentalists Only" value: consumo_anual_total_cII color: #green;
+                data "S_III: Wasteful Only" value: consumo_anual_total_cIII color: #red;
                 
                 // Uniform Pop + Income Scenarios
-                data "C IV: Unif Pop + Linear Income" value: consumo_anual_total_cIV color: #orange;
-                data "C V: Unif Pop + Equilibrium Income" value: consumo_anual_total_cV color: #purple;
-                data "C VI: Unif Pop + Disequilibrium Income" value: consumo_anual_total_cVI color: #brown;
+                data "S_IV: Unif Pop + Linear Income" value: consumo_anual_total_cIV color: #orange;
+                data "S_V: Unif Pop + Equilibrium Income" value: consumo_anual_total_cV color: #purple;
+                data "S_VI: Unif Pop + Disequilibrium Income" value: consumo_anual_total_cVI color: #brown;
                 
                 // Random Pop + Income Scenarios
-                data "C VII: Rand Pop + Linear Income" value: consumo_anual_total_cVII color: #orange ;
-                data "C VIII: Rand Pop + Equilibrium Income" value: consumo_anual_total_cVIII color: #purple ;
-                data "C IX: Rand Pop + Disequilibrium Income" value: consumo_anual_total_cIX color: #brown ;
+                data "S_VII: Rand Pop + Linear Income" value: consumo_anual_total_cVII color: #orange ;
+                data "S_VIII: Rand Pop + Equilibrium Income" value: consumo_anual_total_cVIII color: #purple ;
+                data "S_IX: Rand Pop + Disequilibrium Income" value: consumo_anual_total_cIX color: #brown ;
                 
                 // Environmentalists + Income Scenarios
-                data "C X: Env + Linear Income" value: consumo_anual_total_cX color: #cyan;
-                data "C XI: Env + Equilibrium Income" value: consumo_anual_total_cXI color: #magenta;
-                data "C XII: Env + Disequilibrium Income" value: consumo_anual_total_cXII color: #pink;
+                data "S_X: Env + Linear Income" value: consumo_anual_total_cX color: #cyan;
+                data "S_XI: Env + Equilibrium Income" value: consumo_anual_total_cXI color: #magenta;
+                data "S_XII: Env + Disequilibrium Income" value: consumo_anual_total_cXII color: #pink;
                 
                 // Wasteful + Income Scenarios
-                data "C XIII: Wasteful + Linear Income" value: consumo_anual_total_cXIII color: #darkgreen;
-                data "C XIV: Wasteful + Equilibrium Income" value: consumo_anual_total_cXIV color: #darkred;
-                data "C XV: Wasteful + Disequilibrium Income" value: consumo_anual_total_cXV color: #darkblue;
+                data "S_XIII: Wasteful + Linear Income" value: consumo_anual_total_cXIII color: #darkgreen;
+                data "S_XIV: Wasteful + Equilibrium Income" value: consumo_anual_total_cXIV color: #darkred;
+                data "S_XV: Wasteful + Disequilibrium Income" value: consumo_anual_total_cXV color: #darkblue;
                 
                 // Random Income Scenarios
-                data "C XVI: Unif Pop + Rand Linear Income" value: consumo_anual_total_cXVI color: #teal;
-                data "C XVII: Unif Pop + Rand Equilibrium Income" value: consumo_anual_total_cXVII color: #olive;
-                data "C XVIII: Unif Pop + Rand Disequilibrium Income" value: consumo_anual_total_cXVIII color: #maroon;
+                data "S_XVI: Unif Pop + Rand Linear Income" value: consumo_anual_total_cXVI color: #teal;
+                data "S_XVII: Unif Pop + Rand Equilibrium Income" value: consumo_anual_total_cXVII color: #olive;
+                data "S_XVIII: Unif Pop + Rand Disequilibrium Income" value: consumo_anual_total_cXVIII color: #maroon;
             }
         }
         
@@ -1365,13 +1365,13 @@ experiment "Visualizacao" type: gui {
         display "Graficos" type: java2D {
             chart "Monthly Consumption Forecast" type: series y_label: "Consumption (m^3)" x_label: "Month" {
                 // Main Scenarios
-                data "CI (Base)" value: consumo_anual_total_cI color: #blue;
-                data "CII (Base)" value: consumo_anual_total_cII color: #green;
-                data "CIII (Base)" value: consumo_anual_total_cIII color: #black;        
-                data "CIV (Unif Pop + Linear Income)" value: consumo_anual_total_cIV color: #orange;
-                data "CV (Unif Pop + Equilibrium Income)" value: consumo_anual_total_cV color: #purple;
-                data "CVI (Unif Pop + Disequilibrium Income)" value: consumo_anual_total_cVI color: #brown;
-                data "CIII (Wasteful Only)" value: consumo_anual_total_cIII color: #red;
+                data "S_I (Base)" value: consumo_anual_total_cI color: #blue;
+                data "S_II (Base)" value: consumo_anual_total_cII color: #green;
+                data "S_III (Base)" value: consumo_anual_total_cIII color: #black;        
+                data "S_IV (Unif Pop + Linear Income)" value: consumo_anual_total_cIV color: #orange;
+                data "S_V (Unif Pop + Equilibrium Income)" value: consumo_anual_total_cV color: #purple;
+                data "S_VI (Unif Pop + Disequilibrium Income)" value: consumo_anual_total_cVI color: #brown;
+                data "S_III (Wasteful Only)" value: consumo_anual_total_cIII color: #red;
                 data "Residences Standard Income" value: residencias_com_renda_padarao color: #black;
             }
         }   
